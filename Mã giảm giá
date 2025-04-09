@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bốc thăm giảm giá - Một Cọng Len</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fffaf7;
+      color: #5c3a2f;
+      text-align: center;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: #fff0ea;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    button {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      background: #f4a896;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #e28775;
+    }
+    .result {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-top: 2rem;
+      color: #d94f3d;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎁 Bốc Thăm May Mắn – Một Cọng Len</h1>
+    <p>Click nút bên dưới để bốc thăm mã giảm giá cực yêu từ sốp nha!</p>
+    <button onclick="spinWheel()">Bốc mã giảm giá</button>
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    const prizePool = [
+      'Giảm 50%', 'Giảm 50%', 'Giảm 50%', 'Giảm 50%', 'Giảm 50%',
+      'Giảm 30%', 'Giảm 30%', 'Giảm 30%', 'Giảm 30%', 'Giảm 30%'
+    ];
+
+    for (let i = 0; i < 90; i++) {
+      prizePool.push('Giảm 10%');
+    }
+
+    function spinWheel() {
+      const randomIndex = Math.floor(Math.random() * prizePool.length);
+      const prize = prizePool[randomIndex];
+      const resultDiv = document.getElementById('result');
+      if (resultDiv) {
+        resultDiv.textContent = `Bạn nhận được: ${prize}! ✨`;
+      }
+    }
+  </script>
+</body>
+</html>
